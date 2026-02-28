@@ -18,9 +18,7 @@ url = f"https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&sta
 
 response = requests.get(url)
 data = response.json()
-print(data)
 
-#---------------------------------------------------------
 
 # Extract the daily data
 daily_data = data['daily']
@@ -35,7 +33,6 @@ df = pd.DataFrame({
 # Convert date strings to datetime
 df['date'] = pd.to_datetime(df['date'])
 
-#----------------------------------------------------------------
 
 # Create the plot
 plt.figure(figsize=(10, 6))
@@ -55,8 +52,6 @@ plt.tight_layout()
 # Save the plot
 plt.savefig('weather_chart.png')
 plt.show()
-
-#--------------------------------------------------
 
 
 # Create data folder if it doesn't exist
